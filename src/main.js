@@ -1,5 +1,5 @@
 import 'normalize.css';
-
+import './helpers/charts';
 import App from './App.svelte';
 
 const app = new App({

@@ -8,13 +8,13 @@
 
 <div class="table-section">
     <label class="table-income">
-        <h5>Search for your income</h5>
+        <h4>Search for your income</h4>
         <input class="table-income-input" bind:value={searchAmount} type='number' />
     </label>
     <div class="table">
         <div class="table-row table-header">
             {#each columns as { key, label } (key)}
-                <h4>{label}</h4>
+                <h5>{label}</h5>
             {/each}
         </div>
         {#each rows as row (row.income)}
@@ -62,6 +62,7 @@
 
     .table-row > * {
         padding: 0.3rem;
+        border: 0.1rem solid #f0f0f0;
     }
 
     .table-header {
@@ -71,6 +72,6 @@
     }
 
     .table-header > * {
-        padding-bottom: 0.6rem;
+        padding: 0.6rem 0.6rem 0.9rem 0.6rem;
     }
 </style>

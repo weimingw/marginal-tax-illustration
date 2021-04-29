@@ -21,8 +21,10 @@
 </script>
 
 <main>
-    <TableSection {rows} />
-    <ChartSection {rows} />
+    <div id="illustration">
+        <TableSection {rows} />
+        <ChartSection {rows} />
+    </div>
 </main>
 
 <style>
@@ -36,19 +38,35 @@
 
     :global(*) {
         box-sizing: border-box;
+        color: #555;
     }
 
     main {
-        text-align: center;
-        padding: 1rem;
-        margin: 0 auto;
-        font-size: 1.4rem;
-        
+        display: flex;
+        justify-content: center;
+
         width: 100vw;
         height: 100vh;
     }
 
-    :global(h4), :global(h5), :global(h6) {
+    #illustration {
+        text-align: center;
+        padding: 1rem;
+        margin: 0 auto;
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: stretch;
+
+        width: 100%;
+    }
+
+    #illustration > :global(*) {
+        flex: 1 0;
+    }
+
+    :global(h4),
+    :global(h5),
+    :global(h6) {
         margin: 0;
     }
 
