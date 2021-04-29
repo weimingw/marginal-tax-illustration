@@ -1,8 +1,12 @@
 <script>
+    import merge from 'lodash/merge';
     import { onMount } from 'svelte';
     import { Chart } from 'chart.js';
 
     export let rows;
+
+    const taxesTitle = 'Taxes Due For Income';
+    const rateTitle = 'Actual Tax Rate (Proportion of Income Paid As Tax)';
 
     let averageRateGraph;
     let taxGraph;
@@ -11,30 +15,70 @@
     $: taxes = rows.map((row) => row.tax);
     $: actualRates = rows.map((row) => row.actualRate);
 
+    const baseConfig = {
+        type: 'line',
+        options: {
+            responsive: true,
+            title: { display: true },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 18,
+                        },
+                    },
+                },
+            },
+            elements: {
+                point: {
+                    borderColor: 'rgba(255, 62, 0, 0.04)',
+                    backgroundColor: 'rgba(255, 62, 0, 0.04)',
+                },
+                line: {
+                    borderColor: 'rgba(255, 62, 0, 0.04)',
+                    backgroundColor: 'rgba(255, 62, 0, 0.04)',
+                },
+            },
+        },
+    };
+
     onMount(() => {
-        const config = {
-            type: 'line',
+        const taxGraphConfig = merge(baseConfig, {
             data: {
                 labels: incomes,
                 datasets: [
                     {
-                        label: 'Taxes Due For Income',
+                        label: taxesTitle,
                         data: taxes,
                     },
                 ],
             },
-            options: {
-                title: {
-                    display: true,
-                    text: 'World population per region (in millions)',
-                },
+        });
+
+        new Chart(taxGraph, taxGraphConfig);
+
+        const avgRateGraphConfig = merge(baseConfig, {
+            data: {
+                labels: incomes,
+                datasets: [
+                    {
+                        label: rateTitle,
+                        data: actualRates,
+                    },
+                ],
             },
-        };
-        new Chart(taxGraph, config);
+        });
+        new Chart(averageRateGraph, avgRateGraphConfig);
     });
 </script>
 
 <div class="chart-section">
-    <canvas bind:this={taxGraph} />
-    <canvas bind:this={averageRateGraph} />
+    <canvas bind:this={taxGraph} width="560" height="420" />
+    <canvas bind:this={averageRateGraph} width="560" height="420" />
 </div>
+
+<style>
+    .chart-section > * {
+        margin-top: 2rem;
+    }
+</style>

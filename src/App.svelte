@@ -55,13 +55,13 @@
         margin: 0 auto;
         font-size: 1.4rem;
         display: flex;
-        justify-content: stretch;
-
+        justify-content: center;
         width: 100%;
     }
 
     #illustration > :global(*) {
         flex: 1 0;
+        margin-right: 1.5rem;
     }
 
     :global(h4),
