@@ -1,0 +1,36 @@
+export default [{
+    min: 0,
+    max: 9950,
+    base: 0,
+    rate: 0.1,
+}, {
+    min: 9951,
+    max: 40525,
+    base: 995,
+    rate: 0.12,
+}, {
+    min: 40526,
+    max: 86375,
+    base: 4664,
+    rate: 0.22,
+}, {
+    min: 86376,
+    max: 164925,
+    base: 14751,
+    rate: 0.24,
+}, {
+    min: 164926,
+    max: 209425,
+    base: 33603,
+    rate: 0.32,
+}, {
+    min: 209426,
+    max: 523600,
+    base: 47843,
+    rate: 0.35,
+}, {
+    min: 523600,
+    max: Infinity,
+    base: 157804.25,
+    rate: 0.37,
+}]
