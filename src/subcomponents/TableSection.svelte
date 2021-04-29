@@ -25,13 +25,13 @@
 
 <div class="table-section">
     <label class="table-income">
-        <h4>Search for your income</h4>
+        <h5>Search for your income</h5>
         <input class="table-income-input" bind:value={searchAmount} type="number" />
     </label>
     <div class="table" bind:this={tableRef}>
         <div class="table-row table-header">
             {#each columns as { key, label } (key)}
-                <h5>{label}</h5>
+                <h6>{label}</h6>
             {/each}
         </div>
         {#each rows as row (row.income)}

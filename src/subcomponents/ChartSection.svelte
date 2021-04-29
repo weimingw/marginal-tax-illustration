@@ -5,15 +5,15 @@
 
     export let rows;
 
-    const taxesTitle = 'Taxes Due For Income';
-    const rateTitle = 'Actual Tax Rate (Proportion of Income Paid As Tax)';
+    const taxesTitle = 'Taxes Due For Different Incomes';
+    const rateTitle = 'Actual Tax Rate (Percent of Income Paid As Tax)';
 
     let averageRateGraph;
     let taxGraph;
 
     $: incomes = rows.map((row) => row.income);
     $: taxes = rows.map((row) => row.tax);
-    $: actualRates = rows.map((row) => row.actualRate);
+    $: actualRates = rows.map((row) => row.actualRate * 100);
 
     const baseConfig = {
         type: 'line',
@@ -73,8 +73,8 @@
 </script>
 
 <div class="chart-section">
-    <canvas bind:this={taxGraph} width="560" height="420" />
-    <canvas bind:this={averageRateGraph} width="560" height="420" />
+    <canvas bind:this={taxGraph} width="580" height="400" />
+    <canvas bind:this={averageRateGraph} width="580" height="400" />
 </div>
 
 <style>

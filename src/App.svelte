@@ -21,10 +21,15 @@
 </script>
 
 <main>
+    <div class="intro">
+        <h4>What This Is About</h4>
+        <p>Read my write-up on Medium.</p>
+    </div>
     <div id="illustration">
         <TableSection {rows} />
         <ChartSection {rows} />
     </div>
+    <p style="font-size: 1rem; padding-top: 0.7rem;">(© Weiming Wu 2021)</p>
 </main>
 
 <style>
@@ -39,24 +44,34 @@
     :global(*) {
         box-sizing: border-box;
         color: #555;
+        font-size: 1.4rem;
     }
 
     main {
+        padding: 1rem;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: stretch;
 
         width: 100vw;
         height: 100vh;
     }
 
+    .intro > * {
+        margin-bottom: 0.75rem;
+    }
+
     #illustration {
         text-align: center;
-        padding: 1rem;
         margin: 0 auto;
-        font-size: 1.4rem;
         display: flex;
         justify-content: center;
+        align-items: flex-end;
         width: 100%;
+        flex: 1 0;
+        overflow: hidden;
+        margin-top: 1rem;
     }
 
     #illustration > :global(*) {
@@ -66,7 +81,8 @@
 
     :global(h4),
     :global(h5),
-    :global(h6) {
+    :global(h6),
+    :global(p) {
         margin: 0;
     }
 
@@ -85,7 +101,7 @@
     :global(h6) {
         color: #ff3e00;
         font-size: 1.6rem;
-        font-weight: 200;
+        font-weight: 400;
     }
 
     :global(.table-section),
