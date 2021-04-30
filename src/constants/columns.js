@@ -32,4 +32,9 @@ export default [
         label: 'Actual Rate',
         formatter: percentFormatter,
     },
+    {
+        key: 'remaining',
+        label: 'Remaining Income',
+        formatter: numberFormatter,
+    }
 ];

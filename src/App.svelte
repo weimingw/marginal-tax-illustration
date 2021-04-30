@@ -16,6 +16,7 @@
                 tax,
                 marginalRate: rate,
                 actualRate: isNaN(actualRate) ? 0 : actualRate,
+                remaining: val - tax,
             };
         });
 </script>
@@ -23,7 +24,13 @@
 <main>
     <div class="intro">
         <h4>What This Is About</h4>
-        <p>Read my write-up on Medium.</p>
+        <p>
+            <a
+                href="https://weimingwu.medium.com/half-of-americans-dont-understand-marginal-taxes-so-i-made-a-web-page-to-showing-how-it-works-d3bde0269124"
+            >
+                Read my write-up on Medium.
+            </a>
+        </p>
     </div>
     <div id="illustration">
         <TableSection {rows} />
