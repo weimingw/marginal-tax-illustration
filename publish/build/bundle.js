@@ -13133,27 +13133,27 @@ var app = (function () {
       base: 0,
       rate: 0.1,
   }, {
-      min: 9951,
+      min: 9950,
       max: 40525,
       base: 995,
       rate: 0.12,
   }, {
-      min: 40526,
+      min: 40525,
       max: 86375,
       base: 4664,
       rate: 0.22,
   }, {
-      min: 86376,
+      min: 86375,
       max: 164925,
       base: 14751,
       rate: 0.24,
   }, {
-      min: 164926,
+      min: 164925,
       max: 209425,
       base: 33603,
       rate: 0.32,
   }, {
-      min: 209426,
+      min: 209425,
       max: 523600,
       base: 47843,
       rate: 0.35,
